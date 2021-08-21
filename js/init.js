@@ -15,6 +15,8 @@ var hideSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
+
+
 var getJSONData = function(url){
     var result = {};
     showSpinner();
@@ -44,4 +46,6 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+
+
 });
