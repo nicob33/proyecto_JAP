@@ -1,23 +1,31 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+document.addEventListener("DOMContentLoaded", function (e) {
+    getJSONData(PRODUCTS_URL).then(function(resultObj){         //Traigo los datos de la url, usando la funcion getJSONData que esta en init.js
+        if (resultObj.status === "ok"){                         //Miro que el estado de los datos este ok, y seguidamente los uso para la funcion addToArray
+            addToArray(resultObj.data);               
+        }
+    });
+});
+
 
 var productsArray = [];
 
 
-function addToArray(arrayResult){
+//Agrego a la array productsArray los datos traidos de la URL
+function addToArray(arrayResult){           
 
     if(arrayResult != undefined){
         productsArray = arrayResult;
     }
 
-    showProductsList();
+    showProductsList();  //Una vez agregados los datos, ejecuto la funcion showProductsList
 }
 
-console.log(productsArray);
 
-
-function showProductsList(){
+//En esta funcion armo el html para mostrar el listado de productos
+function showProductsList(){                
 
     let htmlContentToAppend = "";
     for(let i = 0; i < productsArray.length; i++){
@@ -45,10 +53,4 @@ function showProductsList(){
 };
 
 
-document.addEventListener("DOMContentLoaded", function (e) {
-    getJSONData(PRODUCTS_URL).then(function(resultObj){
-        if (resultObj.status === "ok"){
-            addToArray(resultObj.data);
-        }
-    });
-});
+
