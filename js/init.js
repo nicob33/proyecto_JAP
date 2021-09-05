@@ -46,6 +46,6 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-
+  document.getElementById("usuario-menu").innerHTML = `<i class="far fa-user "></i> ${localStorage.getItem('clave')}`;
 
 });

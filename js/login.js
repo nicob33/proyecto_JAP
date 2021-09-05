@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 var form = document.getElementById('formulario');
   form.addEventListener('submit', function(evt){
     evt.preventDefault();
+    localStorage.clear();
     var usuario = document.getElementById('usuario').value;
     var errorUsuario = document.getElementById('error-user');
     errorUsuario.style.color = 'red';
@@ -26,7 +27,13 @@ var form = document.getElementById('formulario');
     return;
   }
 
+  guardarLocalStorage(usuario);
   
   this.submit();
   
   })
+
+
+  function guardarLocalStorage (user){
+    localStorage.setItem ('clave', user);
+  }
