@@ -10,6 +10,7 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -32,22 +33,56 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del producto</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+          seleccionado previamente, siempre se visualizará el presente: <strong>Chevrolet Onix Joy</strong>.</p>
+      </div>
+      <h3 id="productName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Categoria del producto</dt>
+        <dd>
+         <a href="category-info.html"> <p id="productCategory"></p></a>
+        </dd>
+
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+        <dt>Precio</dt>
+        <dd>
+          <p id="productCost"></p>
+        </dd>
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+        <br>
+        <h4><strong>Comentarios</strong></h4>
+        <hr class="my-3">
+        <div id="comments">
+        </div>
+        <div>
+          <h4><strong>Dejanos tu opinión</strong></h4>
+            <textarea name="" id="commentsBox" cols="100" rows="5" placeholder="Escribe aquí comentario"></textarea>
+            <br>
+            <span><strong> Valoración: </strong></span>
+            <span class="fa fa-star" onclick="calificar(this)" style="cursor: pointer;" id="1star"></span>
+            <span class="fa fa-star" onclick="calificar(this)" style="cursor: pointer;" id="2star"></span>
+            <span class="fa fa-star" onclick="calificar(this)" style="cursor: pointer;" id="3star"></span>
+            <span class="fa fa-star" onclick="calificar(this)" style="cursor: pointer;" id="4star"></span>
+            <span class="fa fa-star" onclick="calificar(this)" style="cursor: pointer;" id="5star"></span>
+            <br>
+            <button class="btn btn-primary"  onclick="sendValue()">Enviar</button>
+        </div>
+      </dl>
     </div>
-  </div>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
+  </main>
   </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
@@ -61,6 +96,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/comments.js"></script>
 </body>
 
 </html>
