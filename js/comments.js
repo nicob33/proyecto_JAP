@@ -13,19 +13,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
 var commentsArray = [];
 
 
-//Agrego a la array productsArray los datos traidos de la URL
+//Agrego a la array commentsArray los datos traidos de la URL
 function addToArray(arrayResult){           
 
     if(arrayResult != undefined){
         commentsArray = arrayResult;
     }
 
-    showComments();  //Una vez agregados los datos, ejecuto la funcion showProductsList
+    showComments();  //Una vez agregados los datos, ejecuto la funcion showComments
 }
 
 
 var countStar = 0;
 
+//Funcion para cambiarle el color a las estrellas cuando las eligen para valorar
 function calificar (item){
     console.log(item);
     countStar = item.id[0];
@@ -40,6 +41,8 @@ function calificar (item){
 
 }
 
+
+//funcion para agregar el comentario y la valoracion nueva en el html.
 function sendValue (){
     let htmlContentToAppend = ''
     var opinion = document.getElementById("commentsBox").value;
@@ -73,7 +76,7 @@ function sendValue (){
 }
 
 
-//En esta funcion armo el html para mostrar el listado de productos
+//En esta funcion armo el html para mostrar los comentarios 
 function showComments(){                
 
     let htmlContentToAppend = "";
