@@ -46,6 +46,10 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-  document.getElementById("usuario-menu").innerHTML = `<i class="far fa-user "></i> ${localStorage.getItem('clave')}`;
-
+  if (localStorage.getItem('clave') === null){
+    document.getElementById("sesion").innerHTML = `<a href="index.html"><button type="button" class="btn btn-primary">Iniciar Sesión <i class="fas fa-sign-in-alt"></i></button></a>`;
+    document.getElementById("opinion").innerHTML = `<p class="mb-1">Debes iniciar sesión para poder opinar <a href="index.html"><button type="button" class="btn btn-primary">Iniciar Sesión <i class="fas fa-sign-in-alt"></i></button></a></p>`
+  }else{
+    document.getElementById("usuario-menu").innerHTML = `<i class="far fa-user "></i> ${localStorage.getItem('clave')}`;
+  }
 });

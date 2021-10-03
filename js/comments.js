@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
 });
 
 
+
+
 var commentsArray = [];
 
 
@@ -28,7 +30,6 @@ var countStar = 0;
 
 //Funcion para cambiarle el color a las estrellas cuando las eligen para valorar
 function calificar (item){
-    console.log(item);
     countStar = item.id[0];
     let nameStar = item.id.substring(1);
     for (let i=0; i<5;i++){
@@ -80,6 +81,7 @@ function sendValue (){
 function showComments(){                
 
     let htmlContentToAppend = "";
+
     for(let i = 0; i < commentsArray.length; i++){
         let comments = commentsArray[i];
 

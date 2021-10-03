@@ -23,13 +23,16 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div id="sesion">
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="usuario-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <a href="index.html"><button class="dropdown-item" type="button">Salir</button></a>
+            <a href="cart.html"><button class="dropdown-item" type="button">Carrito <i class="fas fa-shopping-cart"></i></button></a>
+            <a href="my-profile.html"><button class="dropdown-item" type="button">Mi perfil <i class="fas fa-address-card"></i></button></a>
+            <a href="index.html"><button class="dropdown-item" type="button">Cerrar sesión <i class="fas fa-sign-out-alt"></i> </button></a>
           </div>
+      </div>
       </div>
     </div>
   </nav>
@@ -59,9 +62,13 @@
         </dd>
         <dt>Imágenes ilustrativas</dt>
         <dd>
-          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          <div id="productImagesGallery">
           </div>
         </dd>
+        <dt>Productos relacionados</dt>
+        <hr class="my-3">
+          <div id="related-product">
+          </div>
         <br>
         <h4><strong>Comentarios</strong></h4>
         <hr class="my-3">
@@ -69,6 +76,7 @@
         </div>
         <div>
           <h4><strong>Dejanos tu opinión</strong></h4>
+          <div id="opinion">
             <textarea name="" id="commentsBox" cols="100" rows="5" placeholder="Escribe aquí comentario"></textarea>
             <br>
             <span><strong> Valoración: </strong></span>
@@ -79,6 +87,7 @@
             <span class="fa fa-star" onclick="calificar(this)" style="cursor: pointer;" id="5star"></span>
             <br>
             <button class="btn btn-primary"  onclick="sendValue()">Enviar</button>
+          </div>
         </div>
       </dl>
     </div>
