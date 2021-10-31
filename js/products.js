@@ -47,23 +47,21 @@ function showProductsList(){
             ((maxPrice == undefined) || (maxPrice != undefined && parseInt(products.cost) <= maxPrice))){
 
             htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + products.imgSrc + `" alt="` + products.description + `" class="img-thumbnail">
+            <div class="col-md-4">
+                <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                    <img src="${products.imgSrc}" alt="${products.description}" class="bd-placeholder-img card-img-top">
+                    <h3 class="m-3">${products.name}</h3>
+                    <div class="card-body">
+                    <p class="card-text">${products.description}</p>
                     </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ products.name +`</h4>
-                            <p>`+products.currency +` `+ products.cost + `</p>
-                        </div>
-                        <p class="mb-1">` + products.description + `</p>
-                    </div>
-                </div>
-            </a>
-            `
+                    <ul class ="list-group list-group-flush">
+                        <li class="list-group-item" style="text-align: center;"><b>${products.currency} ${products.cost}</b></li>
+                    </ul>
+                </a>
+            </div>
+            
+             `
         }
-
         document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
     }
 }

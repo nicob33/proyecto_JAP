@@ -37,7 +37,6 @@ function updateTotalCart(cant,i,costUnid,newCost){
 }
 
 function showCart(){
-    /*mostrar los productos del carrito con el input correspondiente a la cantidad*/
     let htmlToAppend = "";
     let idCount = 0;
     for(let article of articles){

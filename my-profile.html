@@ -4,11 +4,11 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
-
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
@@ -35,32 +35,99 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+  <header class="header">
+    <nav class="menu-nav">
+      <button class="nav-toggle">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div></div>
+      <ul class="nav-menu-ul">
+        <li class="nav-menu-item">
+          <a class="nav-menu-link nav-link" href="home.html">Inicio</a>
+        </li>
+        <li class="nav-menu-item">
+          <a class="nav-menu-link nav-link" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-menu-item">
+          <a class="nav-menu-link nav-link" href="products.html">Productos</a>
+        </li>
+        <li class="nav-menu-item">
+          <a class="nav-menu-link nav-link" href="sell.html">Vender</a>
+        </li>
+      </ul>
       <div id="sesion">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="usuario-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <a href="cart.html"><button class="dropdown-item" type="button">Carrito <i class="fas fa-shopping-cart"></i></button></a>
-            <a href="my-profile.html"><button class="dropdown-item" type="button">Mi perfil <i class="fas fa-address-card"></i></button></a>
-            <a href="index.html"><button class="dropdown-item" type="button">Cerrar sesión <i class="fas fa-sign-out-alt"></i> </button></a>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="usuario-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          </button>
+          <div class="dropdown-menu dropdown-menu-nav" aria-labelledby="usuario-menu">
+            <a href="cart.html" class="dropdown-item dropdown-item-nav">Carrito <i class="fas fa-shopping-cart"></i></a>
+            <a href="my-profile.html" class="dropdown-item dropdown-item-nav">Mi perfil <i class="fas fa-address-card"></i></a>
+            <a href="index.html" class="dropdown-item dropdown-item-nav">Cerrar sesión <i class="fas fa-sign-out-alt"></i> </a>
           </div>
+        </div>
       </div>
-    </div>
-    </div>
-  </nav>
+    </nav>  
+  </header>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      <h2>Mi perfil</h2>
     </div>
+    <form action="my-profile.html" id="profile-form">
+      <div class="avatar-upload">
+        <div class="avatar-edit">
+          <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" onchange="previewFile()" />
+          <label for="imageUpload"></label>
+        </div>
+        <div class="avatar-preview">
+          <div id="imagePreview" style="background-image: url(img/avatar.png);">
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nameProfile">Nombre*</label>
+          <input type="text" class="form-control" id="nameProfile">
+          <div class="error-profile" id="error-name-profile">           
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="secNameProfile">Segundo Nombre</label>
+          <input type="text" class="form-control" id="secNameProfile">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="lastNameProfile">Apellido*</label>
+          <input type="text" class="form-control" id="lastNameProfile">
+          <div class="error-profile" id="error-lastName-profile">            
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="secLastNameProfile">Segundo Apellido</label>
+          <input type="text" class="form-control" id="secLastNameProfile">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="ageProfile">Edad</label>
+          <input type="number" class="form-control" id="ageProfile" min="1">
+          <div class="error-profile" id="error-age-profile">            
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="phoneProfile">Teléfono de contacto*</label>
+          <input type="number" class="form-control" id="phoneProfile">
+          <div class="error-profile" id="error-phone-profile">            
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <label for="mailProfile">E-Mail*</label>
+          <input type="email" class="form-control" id="mailProfile">
+          <div class="error-profile" id="error-mail-profile">            
+          </div>
+        </div>
+      </div>
+      <hr class="mb-4">
+      <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    </form>
+    </main>
   </div>
   <footer class="text-muted bg-light">
     <div class="container">

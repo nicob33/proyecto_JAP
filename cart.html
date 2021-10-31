@@ -35,25 +35,39 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+  <header class="header">
+    <nav class="menu-nav">
+      <button class="nav-toggle">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div></div>
+      <ul class="nav-menu-ul">
+        <li class="nav-menu-item">
+          <a class="nav-menu-link nav-link" href="home.html">Inicio</a>
+        </li>
+        <li class="nav-menu-item">
+          <a class="nav-menu-link nav-link" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-menu-item">
+          <a class="nav-menu-link nav-link" href="products.html">Productos</a>
+        </li>
+        <li class="nav-menu-item">
+          <a class="nav-menu-link nav-link" href="sell.html">Vender</a>
+        </li>
+      </ul>
       <div id="sesion">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="usuario-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <a href="cart.html"><button class="dropdown-item" type="button">Carrito <i class="fas fa-shopping-cart"></i></button></a>
-            <a href="my-profile.html"><button class="dropdown-item" type="button">Mi perfil <i class="fas fa-address-card"></i></button></a>
-            <a href="index.html"><button class="dropdown-item" type="button">Cerrar sesión <i class="fas fa-sign-out-alt"></i> </button></a>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="usuario-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          </button>
+          <div class="dropdown-menu dropdown-menu-nav" aria-labelledby="usuario-menu">
+            <a href="cart.html" class="dropdown-item dropdown-item-nav">Carrito <i class="fas fa-shopping-cart"></i></a>
+            <a href="my-profile.html" class="dropdown-item dropdown-item-nav">Mi perfil <i class="fas fa-address-card"></i></a>
+            <a href="index.html" class="dropdown-item dropdown-item-nav">Cerrar sesión <i class="fas fa-sign-out-alt"></i> </a>
           </div>
+        </div>
       </div>
-    </div>
-    </div>
-  </nav>
+    </nav>  
+  </header>
   <main role="main">
     <div class="container mt-5">
       <h4 class="mb-3">Articulos seleccionados</h4>
