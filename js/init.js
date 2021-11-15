@@ -42,13 +42,14 @@ var getJSONData = function(url){
     });
 }
 
-
+//menu responsive
 const navMenu = document.querySelector(".nav-menu-ul");
 const navToggle = document.querySelector(".nav-toggle");
 
 navToggle.addEventListener("click",()=> {
   navMenu.classList.toggle("nav-menu_visible");
 })
+
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los

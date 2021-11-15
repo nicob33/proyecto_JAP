@@ -370,3 +370,13 @@ body{
   background-repeat: no-repeat;
   background-position: center;
 }
+
+#no-select-fp{
+  color: red;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.select-fp{
+  color: green !important;
+}
